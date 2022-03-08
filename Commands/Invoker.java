@@ -11,45 +11,29 @@ public class Invoker {
     private static Stack<String> history = new Stack<String>();
     
     public Invoker() {
-    	Command help = new HelpCommand();
-    	Command info = new InfoCommand();
-    	Command show = new ShowCommand();
-    	Command insert = new InsertCommand();
-    	Command update = new UpdateCommand();
-    	Command remove_key = new RemoveKeyCommand();
-    	Command clear = new ClearCommand();
-    	Command save = new SaveCommand();
-    	Command execute_script = new ExecuteScriptCommand();
-    	Command exit = new ExitCommand();
-    	Command remove_lower = new RemoveLowerCommand();
-    	Command history = new HistoryCommand();
-    	Command replace_if_lower = new ReplaceIfLowerCommand();
-    	Command sum_of_engine_power = new SumOfEnginePowerCommand();
-    	Command average_of_engine_power = new AverageOfEnginePowerCommand();
-    	Command print_field_descending_fuel_type = new PrintFieldDescendingFuelTypeCommand();
     	
-    	this.register("help", help);
-    	this.register("info", info);
-    	this.register("show", show);
-    	this.register("insert", insert);
-    	this.register("update", update);
-    	this.register("remove_key", remove_key);
-    	this.register("clear", clear);
-    	this.register("save", save);
-    	this.register("execute_script", execute_script);
-    	this.register("exit", exit);
-    	this.register("remove_lower", remove_lower);
-    	this.register("history", history);
-    	this.register("replace_if_lower", replace_if_lower);
-    	this.register("sum_of_engine_power", sum_of_engine_power);
-    	this.register("average_of_engine_power", average_of_engine_power);
-    	this.register("print_field_descending_fuel_type", print_field_descending_fuel_type);
+    	this.register("help", new HelpCommand());
+    	this.register("info", new InfoCommand());
+    	this.register("show", new ShowCommand());
+    	this.register("insert", new InsertCommand());
+    	this.register("update", new UpdateCommand());
+    	this.register("remove_key", new RemoveKeyCommand());
+    	this.register("clear", new ClearCommand());
+    	this.register("save", new SaveCommand());
+    	this.register("execute_script", new ExecuteScriptCommand());
+    	this.register("exit", new ExitCommand());
+    	this.register("remove_lower", new RemoveLowerCommand());
+    	this.register("history", new HistoryCommand());
+    	this.register("replace_if_lower", new ReplaceIfLowerCommand());
+    	this.register("sum_of_engine_power", new SumOfEnginePowerCommand());
+    	this.register("average_of_engine_power", new AverageOfEnginePowerCommand());
+    	this.register("print_field_descending_fuel_type", new PrintFieldDescendingFuelTypeCommand());
     	
     }
     
     public void register(String commandName, Command command) {
         commandMap.put(commandName, command);
-    }
+    } 
     
     public void execute(String commandName) {
         Command command = commandMap.get(commandName);
@@ -67,9 +51,6 @@ public class Invoker {
     }
     public void getHelp(String commandName) {
         Command command = commandMap.get(commandName);
-        if (command == null) {
-            throw new IllegalStateException("no command registered for " + commandName);
-        }
         command.getHelp();
     }
     public static ArrayList<String> getKeys() {

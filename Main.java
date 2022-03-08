@@ -12,10 +12,14 @@ public static void main(String[] path) {
 	while (true) {	
 		String str = parser.nextLine();
 		String[] args = str.split(" ");
+		try {
 		try {invoker.execute(args[0], args[1]);}
 		catch (ArrayIndexOutOfBoundsException e) {
 			invoker.execute(args[0]);
 		}
+		} catch (IllegalStateException e) {
+			System.out.println("Нет такой команды! Пропробуй ещё раз");
 		}
+	}
 	}
 }
