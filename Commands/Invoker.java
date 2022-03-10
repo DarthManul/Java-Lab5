@@ -66,7 +66,6 @@ public class Invoker {
     	history.add(command);}
     }
     public static void getHistory() {
-    	LinkedList<String> hist = history;
     	if (history.isEmpty()) {System.out.println("История пуста!");} 
     	else {
     	System.out.println("История последних "+ Integer.toString(count) +" команд:");
