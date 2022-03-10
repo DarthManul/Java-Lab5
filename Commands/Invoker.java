@@ -68,7 +68,7 @@ public class Invoker {
     	if (hist.isEmpty()) {System.out.println("История пуста!");} 
     	else {
     	System.out.println("История последних "+ Integer.toString(count) +" команд:");
-    	while (!hist.isEmpty() | count == 0) {
+    	while (!hist.isEmpty() || count == 0) {
     		System.out.println(hist.pop());
     		count--;
     		}
