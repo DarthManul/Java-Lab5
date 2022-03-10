@@ -8,8 +8,8 @@ import java.util.Stack;
 
 public class Invoker {
     private static HashMap<String, Command> commandMap = new HashMap<>();
-    private static Stack<String> history = new Stack<String>();
-    
+    private static LinkedList<String> history = new LinkedList<String>();
+    private static final int count = HistoryCommand.count;
     public Invoker() {
     	
     	this.register("help", new HelpCommand());
@@ -61,17 +61,18 @@ public class Invoker {
     	return(keys);
     }
     public static void addHistory(String command){
-    	history.add(command);
+    	if (history.size()<count) {history.add(command);}
+    	else {history.poll();
+    	history.add(command);}
     }
-    public static void getHistory(int count) {
-    	Stack<String> hist = history;
-    	if (hist.isEmpty()) {System.out.println("История пуста!");} 
+    public static void getHistory() {
+    	LinkedList<String> hist = history;
+    	if (history.isEmpty()) {System.out.println("История пуста!");} 
     	else {
     	System.out.println("История последних "+ Integer.toString(count) +" команд:");
-    	while (!hist.isEmpty() || count == 0) {
-    		System.out.println(hist.pop());
-    		count--;
-    		}
+    	for (String com: history) {
+    		System.out.println(com);
+    	}
     	}
     }
     

@@ -2,13 +2,13 @@ package Commands;
 
 public class HistoryCommand extends Command {
 	
-	private int count = 11; // количество выводимых команд
+	protected static final int count = 11; // количество выводимых команд
 	
 	public void execute() {
-		Invoker.getHistory(count);
+		Invoker.getHistory();
 		Invoker.addHistory("history");
 	}
 	public void getHelp() {
-		System.out.println("history : вывести последние" + Integer.toString(count)+" команд (без их аргументов)");
+		System.out.println("history : вывести последние" + count +" команд (без их аргументов)");
 	}
 }
