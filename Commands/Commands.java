@@ -1,5 +1,5 @@
 package Commands;
-
+// Здесь сидят все нереализованные команды
 
 
 class InfoCommand extends Command {
@@ -58,14 +58,6 @@ class SaveCommand extends Command {
 	}
 }
 
-class ExecuteScriptCommand extends Command {
-	public void execute() {
-		System.out.println("Execute_script command");
-	}
-	public void getHelp() {
-		System.out.println("execute_script file_name : считать и исполнить скрипт из указанного файла. В скрипте содержатся команды в таком же виде, в котором их вводит пользователь в интерактивном режиме.");
-	}
-}
 
 
 
