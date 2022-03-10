@@ -14,10 +14,12 @@ class ExecuteScriptCommand extends Command {
 		Invoker invoker = new Invoker();
 		try {
 		Scanner scanner = new Scanner(path);
+		Invoker.addHistory("execute_script");
 		while(scanner.hasNext()) {
 			String cmd = scanner.nextLine();
 			invoker.execute(cmd);
 		}
+
 		scanner.close();
 		} 
 		catch(IOException e) {

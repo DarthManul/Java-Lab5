@@ -1,5 +1,4 @@
-help
-help
-help
-help
-help
+save
+save
+save
+exit
