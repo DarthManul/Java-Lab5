@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.util.ArrayDeque;
+import java.util.NoSuchElementException;
 
 public class Main {
 public static void main(String[] path) {
 	Invoker invoker = new Invoker();
 	Scanner parser = new Scanner(System.in);
 	while (true) {	
+
 		String str = parser.nextLine();
 		String[] args = str.split(" ");
 		try {
@@ -20,6 +22,7 @@ public static void main(String[] path) {
 		} catch (IllegalStateException e) {
 			System.out.println("Нет такой команды! Пропробуй ещё раз");
 		}
+	
 	}
 	}
 }

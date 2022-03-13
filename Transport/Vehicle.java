@@ -10,7 +10,7 @@ public class Vehicle {
     private VehicleType type; //Поле может быть null
     private FuelType fuelType; //Поле не может быть null
     public Vehicle() {
-    	this.id = Long.valueOf(10);
+    	this.id = Long.valueOf(this.hashCode());
     	this.name = "Car";
     	this.creationDate = LocalDate.now();
     	this.coordinates = new Coordinates();
@@ -19,7 +19,7 @@ public class Vehicle {
     	this.fuelType = FuelType.ELECTRICITY;
     }
     public String toString() {
-    	return id+" "+name;
+    	return id+" "+name+ " "+ coordinates+ " "+creationDate +" "+ enginePower +" "+ type+" "+fuelType;
     }
 }
 
