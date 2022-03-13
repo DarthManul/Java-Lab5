@@ -3,7 +3,7 @@ import java.util.HashMap;
 import java.time.LocalDate;
 
 public class VehicleCollection {
-	static HashMap<String, Vehicle> collection = new HashMap<>();
+	public static HashMap<String, Vehicle> collection = new HashMap<>();
 	LocalDate creationDate;
 	public VehicleCollection() {
 		this.creationDate = LocalDate.now();

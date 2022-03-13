@@ -3,7 +3,8 @@ package Commands;
 import Transport.VehicleCollection;
 
 public class ShowCommand extends Command {
-	public void execute(VehicleCollection collection) {
+	public void execute() {
+		VehicleCollection.show();
 		Invoker.addHistory("show");
 	}
 	public void getHelp() {

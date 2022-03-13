@@ -3,7 +3,7 @@ import Transport.*;
 
 class InsertCommand extends Command {
 	public void execute(String arg) {
-		System.out.println("Insert" + arg);
+		VehicleCollection.add(arg, new Vehicle());
 		Invoker.addHistory("insert");
 		
 	}
