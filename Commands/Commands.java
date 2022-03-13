@@ -11,14 +11,7 @@ class InfoCommand extends Command {
 	}
 }
 
-class ShowCommand extends Command {
-	public void execute() {
-		System.out.println("Show");
-	}
-	public void getHelp() {
-		System.out.println("show : вывести в стандартный поток вывода все элементы коллекции в строковом представлении");
-	}
-}
+
 
 
 
