@@ -2,14 +2,6 @@ package Commands;
 // Здесь сидят все нереализованные команды
 
 
-class InfoCommand extends Command {
-	public void execute() {
-		System.out.println("Info");
-	}
-	public void getHelp() {
-		System.out.println("info : вывести в стандартный поток вывода информацию о коллекции \n (тип, дата инициализации, количество элементов и т.д.)");
-	}
-}
 
 
 
@@ -42,14 +34,6 @@ class ClearCommand extends Command {
 	}
 }
 
-class SaveCommand extends Command {
-	public void execute() {
-		System.out.println("Save command");
-	}
-	public void getHelp() {
-		System.out.println("save : сохранить коллекцию в файл");
-	}
-}
 
 
 

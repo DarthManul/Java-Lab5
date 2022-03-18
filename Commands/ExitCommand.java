@@ -3,6 +3,7 @@ package Commands;
 import java.util.Scanner;
 
 public class ExitCommand extends Command {
+	private String name = "exit";
 	public void execute() {
 		Scanner scan = new Scanner(System.in);
 		System.out.println("Вы действительно хотите выйти? y/n");

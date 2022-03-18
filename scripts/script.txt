@@ -1,4 +1,10 @@
-save
-save
-save
-exit
+insert 10
+show
+insert 20
+show
+insert 25
+show
+insert 21
+show
+insert 14
+show

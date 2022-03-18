@@ -4,9 +4,8 @@ import java.time.LocalDate;
 
 public class VehicleCollection {
 	public static HashMap<String, Vehicle> collection = new HashMap<>();
-	LocalDate creationDate;
+	public static LocalDate creationDate = LocalDate.now();
 	public VehicleCollection() {
-		this.creationDate = LocalDate.now();
 	}
 	
 	public static void add(String key, Vehicle vehicle) {
@@ -15,5 +14,8 @@ public class VehicleCollection {
 	public static void show() {
 		collection.forEach((k,v) -> System.out.println(k + " "+ v));
 	}
-	
+	public static int numberOfElements() {
+		return collection.size();
+		
+	}
 }
