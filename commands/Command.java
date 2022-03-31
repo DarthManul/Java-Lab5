@@ -1,6 +1,7 @@
-package Commands;
+package commands;
 
 public abstract class Command {
+	private String name;
 	public void execute() {
 		System.out.println("Эта команда не поддерживает ввод без аргумента. Попробуйте ввести аргумент");
 	}
@@ -8,4 +9,8 @@ public abstract class Command {
 		System.out.println("Эта команда не поддерживает ввод аргументов. Попробуйте ещё раз");
 	}
 	public void getHelp() {}
+	@Override
+	public String toString() {
+		return name;
+	}
 }

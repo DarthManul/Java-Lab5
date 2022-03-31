@@ -1,9 +1,10 @@
-package Commands;
-import Transport.*;
+package commands;
+import transport.*;
 
 class InsertCommand extends Command {
 	public void execute(String arg) {
-		System.out.println("Insert" + arg);
+		CollectionManager collection = CollectionManager.getInstance();
+		collection.add(arg, Vehicle.enterNewVehicle());
 		Invoker.addHistory("insert");
 		
 	}

@@ -1,4 +1,4 @@
-package Commands;
+package commands;
 
 import java.io.IOException;
 import java.nio.file.Path;
@@ -16,8 +16,12 @@ class ExecuteScriptCommand extends Command {
 		Scanner scanner = new Scanner(path);
 		Invoker.addHistory("execute_script");
 		while(scanner.hasNext()) {
-			String cmd = scanner.nextLine();
-			invoker.execute(cmd);
+			String str = scanner.nextLine();
+			String[] arg = str.split(" ");
+			try {invoker.execute(arg[0], arg[1]);}
+			catch (ArrayIndexOutOfBoundsException e) {
+				invoker.execute(arg[0]);
+			}
 		}
 
 		scanner.close();
