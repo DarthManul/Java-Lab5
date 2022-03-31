@@ -1,12 +1,14 @@
-package Commands;
+package commands;
 
-import Transport.VehicleCollection;
-import XML.XMLparser;
+import transport.CollectionManager;
+import xml.XMLwriter;
 
 class SaveCommand extends Command {
 	public void execute() {
 		try {
-		XMLparser.toXML();
+		XMLwriter writer = new XMLwriter();
+		writer.write();
+		Invoker.addHistory("save");
 		}
 		catch (Exception e) {
 			System.out.println(e);

@@ -1,10 +1,10 @@
-package Commands;
+package commands;
 
-import Transport.VehicleCollection;
+import transport.CollectionManager;
 
 public class ShowCommand extends Command {
 	public void execute() {
-		VehicleCollection.show();
+		CollectionManager.getInstance().showCollection();
 		Invoker.addHistory("show");
 	}
 	public void getHelp() {

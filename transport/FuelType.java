@@ -1,4 +1,4 @@
-package Transport;
+package transport;
 
 import java.util.Scanner;
 
@@ -9,7 +9,7 @@ public enum FuelType {
     MANPOWER,
     NUCLEAR,
     PLASMA;
-	public static FuelType setEnum() {
+	public static FuelType enterEnum() {
 		System.out.println("Выберите тип топлива:\n"
 				+ "1 - Бензин\n"
 				+ "2 - Электроугли\n"
@@ -32,5 +32,21 @@ public enum FuelType {
 		default:
 			return null;
 		}
-}
+	}
+	public static FuelType setEnum(String str) {
+		switch (str) {
+		case "GASOLINE":
+			return FuelType.GASOLINE;
+		case "ELECTRICITY":
+			return FuelType.ELECTRICITY;
+		case "MANPOWER":
+			return FuelType.MANPOWER;
+		case "NUCLEAR":
+			return FuelType.NUCLEAR;
+		case "PLASMA":
+			return FuelType.PLASMA;
+		default:
+			return null;
+		}
+	}
 }

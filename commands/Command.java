@@ -1,4 +1,4 @@
-package Commands;
+package commands;
 
 public abstract class Command {
 	private String name;

@@ -1,5 +1,9 @@
 import java.util.Scanner;
-import Commands.Invoker;
+
+import commands.Invoker;
+import transport.CollectionManager;
+import xml.XmlParser;
+
 import java.io.IOException;
 import java.nio.file.Path;
 import java.nio.file.Paths;
@@ -10,6 +14,8 @@ public class Main {
 public static void main(String[] path) {
 	Invoker invoker = new Invoker();
 	Scanner parser = new Scanner(System.in);
+	XmlParser.getData();
+	//CollectionManager.getInstance().setInstanse(CollectionManager.LoadCollection());
 	while (true) {	
 
 		String str = parser.nextLine();

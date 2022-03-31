@@ -1,4 +1,4 @@
-package Transport;
+package transport;
 import java.util.Scanner;
 
 public enum VehicleType {
@@ -7,7 +7,7 @@ public enum VehicleType {
     DRONE,
     BOAT,
     HOVERBOARD;
-	public static VehicleType setEnum() {
+	public static VehicleType enterEnum() {
 		System.out.println("Выберите тип транспортного средства:\n"
 				+ "1 - Аааавтомобиль\n"
 				+ "2 - Кукурузник\n"
@@ -26,6 +26,22 @@ public enum VehicleType {
 		case 4:
 			return VehicleType.BOAT;
 		case 5:
+			return VehicleType.HOVERBOARD;
+		default:
+			return null;
+		}
+	}
+	public static VehicleType setEnum(String str) {
+		switch (str) {
+		case "CAR":
+			return VehicleType.CAR;
+		case "PLANE":
+			return VehicleType.PLANE;
+		case "DRONE":
+			return VehicleType.DRONE;
+		case "BOAT":
+			return VehicleType.BOAT;
+		case "HOVERBOARD":
 			return VehicleType.HOVERBOARD;
 		default:
 			return null;
